@@ -34,12 +34,12 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <?php $this->Form->checkbox('status', ['label' => 'Active', 'class' => 'form-check-input me-2']) ?>
-                  <input
+                  <?= $this->Form->checkbox('status', ['label' => 'Active', 'class' => 'form-check-input me-2']) ?>
+                  <!-- <input
                     class="form-check-input me-2"
                     type="checkbox"
                     value="Active"
-                  />
+                  /> -->
                   <label class="form-check-label">
                     Active
                   </label>
