@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'My Admin';
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +46,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <!-- <a class="nav-link active" href="#">Sing In</a> -->
-                        <?= $this->Html->link('Logout', '/users/login',['class' => 'nav-link active']) ?>
+                        <?= $this->Html->link('Logout', '/users/logout',['class' => 'nav-link active']) ?>
                     </li>
                 </ul>
             </div>
