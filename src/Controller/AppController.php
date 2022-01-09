@@ -44,6 +44,8 @@ class AppController extends Controller
             $this->loadComponent('RequestHandler');
             $this->loadComponent('Flash');
 
+            $this->loadComponent('Paginator');
+
             $this->loadComponent('Auth', [
             'loginAction' => [
                 'controller' => 'Users',

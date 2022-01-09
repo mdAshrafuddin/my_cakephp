@@ -58,9 +58,10 @@ $cakeDescription = 'My Admin';
         <div class="row">
             <div class="col-4">
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                <?= $this->Html->link('Users', '/users',['class' => 'list-group-item list-group-item-action active'])?>
+                <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
                     Users
-                </a>
+                </a> -->
                 <a href="#" class="list-group-item list-group-item-action">Students</a>
             </div>
             </div>

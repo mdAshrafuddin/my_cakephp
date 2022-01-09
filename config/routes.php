@@ -53,6 +53,8 @@ return static function (RouteBuilder $routes) {
         // $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
         // users route
         $builder->connect('/users', ['controller' => 'Users', 'action' => 'index', 'index']);
+        $builder->connect('/users/add', ['controller' => 'Users', 'action' => 'add', 'add']);
+        $builder->connect('/users/edit', ['controller' => 'Users', 'action' => 'edit', 'edit']);
         $builder->connect('/users/login', ['controller' => 'Users', 'action' => 'login', 'login']);
         $builder->connect('/users/singup', ['controller' => 'Users', 'action' => 'singup', 'singup']);
 
