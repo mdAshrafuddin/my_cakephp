@@ -10,6 +10,7 @@ class User extends Entity
     protected $_accessible = [
         '*' => true,
         'id' => false,
+        'name' => true,
     ];
 
     // Add this method
