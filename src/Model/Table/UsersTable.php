@@ -20,12 +20,8 @@ class UsersTable extends Table
     {
         $validator
             ->notEmptyString('name')
-            ->minLength('name', 10)
-            ->notEmptyString('email')
-            ->maxLength('name', 20)
-
-            ->notEmptyString('phone')
-            ->minLength('name', 20);
+            ->add('email', 'valid-email', ['rule' => 'email'])
+            ->notEmptyString('phone');
 
         return $validator;
     }

@@ -11,11 +11,6 @@
 
                 <div class="form-outline mb-4">
                     <?= $this->Form->control('name', ['class'=>'form-control form-control-lg'])?>
-                    <?php
-                      if ($this->Form->isFieldError('name')) {
-                          $this->Form->error('name');
-                      }
-                    ?>
                 </div>
 
                 <div class="form-outline mb-4">
