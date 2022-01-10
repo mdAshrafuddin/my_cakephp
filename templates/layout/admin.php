@@ -15,6 +15,10 @@
  */
 
 $cakeDescription = 'My App';
+ 
+$c_name = $this->request->getParam('controller');
+$a_name = $this->request->getParam('action');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,12 +49,11 @@ $cakeDescription = 'My App';
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <!-- <a class="nav-link active" href="#">Sing In</a> -->
-                        <?= $this->Html->link('Login', '/users/login',['class' => 'nav-link active']) ?>
+                        <a class="nav-link <?= $a_name == 'login' ? 'active' : ''?>" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login'])?>">Login</a>
+                        
                     </li>
                     <li class="nav-item">
-                        <!-- <a class="nav-link" href="#">Sing Up</a> -->
-                        <?= $this->Html->link('Sing Up', '/users/singup',['class' => 'nav-link']) ?>
+                        <a class="nav-link <?= $a_name == 'singup' ? 'active' : ''?>" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'singup'])?>">Sing Up</a>
                     </li>
                 </ul>
             </div>

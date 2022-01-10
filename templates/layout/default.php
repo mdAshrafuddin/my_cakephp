@@ -14,6 +14,9 @@
  * @var \App\View\AppView $this
  */
 
+$c_name = $this->request->getParam('controller');
+$a_name = $this->request->getParam('action');
+
 $cakeDescription = 'My Admin';
 ?>
 <!DOCTYPE html>
@@ -45,8 +48,7 @@ $cakeDescription = 'My Admin';
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <!-- <a class="nav-link active" href="#">Sing In</a> -->
-                        <?= $this->Html->link('Logout', '/users/logout',['class' => 'nav-link active']) ?>
+                        <a class="nav-link <?= $a_name == 'logout' ? 'active' : ''?>" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'logout'])?>">logout</a>
                     </li>
                 </ul>
             </div>

@@ -54,9 +54,16 @@ return static function (RouteBuilder $routes) {
         // users route
         $builder->connect('/users', ['controller' => 'Users', 'action' => 'index', 'index']);
         $builder->connect('/users/add', ['controller' => 'Users', 'action' => 'add', 'add']);
-        $builder->connect('/users/edit', ['controller' => 'Users', 'action' => 'edit', 'edit']);
+        $builder->connect('/users/userStatus/{id}/{status}', ['controller' => 'Users', 'action' => 'userStatus', 'userStatus']);
+        $builder->connect('/users/edit/{id}', ['controller' => 'Users', 'action' => 'edit', 'edit'],
+        ['id' => '\d+', 'pass' => ['id']]);
+        $builder->connect('/users/delete/{id}', ['controller' => 'Users', 'action' => 'delete', 'delete'],
+        ['id' => '\d+', 'pass' => ['id']]);
+        $builder->connect('/users/view/{id}', ['controller' => 'Users', 'action' => 'view', 'view'],
+        ['id' => '\d+', 'pass' => ['id']]);
         $builder->connect('/users/login', ['controller' => 'Users', 'action' => 'login', 'login']);
         $builder->connect('/users/singup', ['controller' => 'Users', 'action' => 'singup', 'singup']);
+        $builder->connect('/users/logout', ['controller' => 'Users', 'action' => 'logout', 'logout']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

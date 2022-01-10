@@ -16,11 +16,22 @@
     <?php foreach($users as $user):?>
         <tr>
             <th scope="row"><?= h($user->id)?></th>
-            <td><?= h($user->name)?></td>
+            <td><a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'view', $user->id])?>"><?= h($user->name)?></a></td>
             <td><?= h($user->email)?></td>
             <td><?= h($user->phone)?></td>
-            <td><?= h($user->status)?></td>
-            <td>edit / delete</td>
+            <td>
+              <?php if($user->status == 'InActive'): ?>
+               <?= $this->Form->postLink(__('Active'), ['action' => 'userStatus', $user->id, $user->status], ['confirm' => 'Are you sure?'])?> 
+              <?php  else: ?>
+               <?= $this->Form->postLink(__('InActive'), ['action' => 'userStatus', $user->id, $user->status], ['confirm' => 'Are you sure?'])?> 
+              <?php endif;?>
+               
+        
+        </td>
+            <td>
+            <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'edit', $user->id])?>">Edit</a>  
+              
+              / <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'delete', $user->id])?>">Delete</a>  </td>
         </tr>
     <?php endforeach;?>
       
