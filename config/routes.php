@@ -65,6 +65,12 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/users/singup', ['controller' => 'Users', 'action' => 'singup', 'singup']);
         $builder->connect('/users/logout', ['controller' => 'Users', 'action' => 'logout', 'logout']);
 
+        // Students Route
+        $builder->connect('/students', ['controller' => 'Students', 'action' => 'index', 'index']);
+        $builder->connect('/students/view/{slug}', ['controller' => 'Students', 'action' => 'view', 'view'],
+        ['slug' => '[a-z0-9-_]+', 'pass' => ['slug']]);
+        $builder->connect('/students/edit/{slug}', ['controller' => 'Students', 'action' => 'edit', 'edit'],
+        ['slug' => '[a-z0-9-_]+', 'pass' => ['slug']]);
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */

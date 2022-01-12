@@ -26,7 +26,7 @@ class UsersController extends AppController
 
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user = $this->Users->patchEntity($user, $this->request->getData(),['validate' => true]);
 
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Your user has been saved.'));
@@ -34,7 +34,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('Unable to add your user.'));
         }
-        $this->set('user', $user);
+        $this->set(compact("user"));
     }
 
     public function logout()

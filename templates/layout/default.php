@@ -60,14 +60,14 @@ $cakeDescription = 'My Admin';
         <div class="row">
             <div class="col-4">
             <div class="list-group">
-                <?= $this->Html->link('Users', '/users',['class' => 'list-group-item list-group-item-action active'])?>
-                <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                <a href="<?= $this->Url->Build(['controller' => 'Users', 'action'=>'index']) ?>" class="list-group-item list-group-item-action <?= $c_name == 'Users' ? 'active' : ''?>" aria-current="true">
                     Users
-                </a> -->
-                <a href="#" class="list-group-item list-group-item-action">Students</a>
+                </a>
+                <a href="<?= $this->Url->Build(['controller' => 'Students', 'action'=>'index']) ?>" class="list-group-item list-group-item-action <?= $c_name == 'Students' ? 'active' : ''?>">Students</a>
             </div>
             </div>
             <div class="col-8">
+                <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
             </div>
         </div>

@@ -64,6 +64,7 @@ $a_name = $this->request->getParam('action');
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col">
+                <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
             </div>
         </div>
