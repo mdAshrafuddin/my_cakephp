@@ -64,6 +64,7 @@ $cakeDescription = 'My Admin';
                     Users
                 </a>
                 <a href="<?= $this->Url->Build(['controller' => 'Students', 'action'=>'index']) ?>" class="list-group-item list-group-item-action <?= $c_name == 'Students' ? 'active' : ''?>">Students</a>
+                <a href="<?= $this->Url->Build(['controller' => 'Articles', 'action'=>'index']) ?>" class="list-group-item list-group-item-action <?= $c_name == 'Articles' ? 'active' : ''?>">Articles</a>
             </div>
             </div>
             <div class="col-8">

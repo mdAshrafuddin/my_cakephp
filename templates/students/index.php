@@ -35,3 +35,11 @@
   </tbody>
 </table>
 <?= $this->Form->end(); ?>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <?= $this->Paginator->prev('Previous')?>
+    <?=  $this->Paginator->numbers()?>
+    <?=  $this->Paginator->next('Next')?>
+  </ul>
+</nav>

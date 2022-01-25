@@ -11,6 +11,9 @@ class UsersTable extends Table
     {
         $this->setTable('users');                         
         $this->addBehavior('Timestamp');
+        $this->hasMany('Articles')
+            ->setForeignKey('user_id')
+            ->setDependent(true);
     }
 
 

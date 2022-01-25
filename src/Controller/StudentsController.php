@@ -9,7 +9,10 @@ class StudentsController extends AppController
     // Get all from student table
     public function index()
     {
-        $students = $this->Paginator->paginate($this->Students->find());
+        $this->paginate = [
+            'limit' => 2
+        ];
+        $students = $this->paginate($this->Students);
         $this->set(compact('students'));
     }
 

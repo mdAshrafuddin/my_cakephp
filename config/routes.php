@@ -71,6 +71,11 @@ return static function (RouteBuilder $routes) {
         ['slug' => '[a-z0-9-_]+', 'pass' => ['slug']]);
         $builder->connect('/students/edit/{slug}', ['controller' => 'Students', 'action' => 'edit', 'edit'],
         ['slug' => '[a-z0-9-_]+', 'pass' => ['slug']]);
+
+        // articles Route
+        $builder->connect('/articles', ['controller' => 'Articles', 'action' => 'index', 'index']);
+        $builder->connect('/articles/add', ['controller' => 'Articles', 'action' => 'add', 'add']);
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */

@@ -26,7 +26,7 @@
                     <?= $this->Form->control('phone', ['label' => 'Your Phone', 'class' => 'form-control form-control-lg']) ?>
                 </div>
 
-                <?= $this->Form->button('Edit', ['class' => 'btn btn-success btn-block btn-lg gradient-custom-4 text-body']) ?>
+                <?= $this->Form->button('Add', ['class' => 'btn btn-success btn-block btn-lg gradient-custom-4 text-body']) ?>
 
                 <?= $this->Form->end(); ?>
 
